@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "Alexander White"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Environmental Major, Aspiring Urban Planner, Tech Geek and "Foodie"."
+  bio    : "Environmental Major, Aspiring Urban Planner, Tech Geek and Foodie."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
