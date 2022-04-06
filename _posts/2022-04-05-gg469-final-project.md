@@ -19,6 +19,7 @@ The border was removed by adding "0" to the No Data Value property for the layer
 
 **BEFORE** - With Borders.
 ![TIF_WithBorder](../assets/images/gg469/TIF_WithBorder2.jpg)
+
 **AFTER** - Without Borders.
 ![TIF_WithoutBorder](../assets/images/gg469/TIF_WithoutBorder2.jpg)
 
@@ -30,12 +31,13 @@ We then 'Clipped' the "Watercourse" layer we received from the Ont_GeoHub, then 
 
 **BEFORE** - ELC Un-edited
 ![ELC_Unedited](../assets/images/gg469/ELC_Type_Unedited.jpg "ELC Type Unedited")
+
 **AFTER** - ELC Separated
 ![ELC_Unedited](../assets/images/gg469/ELC_Type_Seperated.jpg "ELC Type Separated")
 
 **Determining Areas for NHS Growth** - With the objective of strengthening or enlarging the existing natural areas, we had to define where we could realistically expand. The conclusion was that agricultural lands were the most likely candidate for naturalizations and that any 'Urban' or 'Developed' area would be out of bounds. Using our groups research on best practices, we determined that expanding our existing natural areas by a 60 meter buffer would provide a significant increase in protection for most terrestrial and aquatic species likely found in this area. Buffers ranging from 20 meter to 120 meters were applied to the land uses types in varying combinations, but ultimately a consistent 60 meter buffer on all types seamed most pragmatic. We then removed any buffer area that fell within the "Developed" layer using the "difference" tool, ensuring our NHS would only grow into agricultural areas. (See "NHS_Feature")
 
-![NHS_Features](../assets/images/gg469/NHS_Features.jpg "NHS Features")
+![NHS_Features](../assets/images/gg469/NHS_Features.jpg)
 
 **Formatting Layer for Leaflet** - The final portion of work done in QGIs was to optimize for dissemination, in this case interactive web mapping using [Leaflet.js](https://leafletjs.com/SlavaUkraini/). Our objective here was to create separate, selectable features for Core Area, Corridor Area and Steppingstone Areas. Using the 'NHS_Features_Final', we manually delineated each feature (which were comprised of the woodland, wetland, and cultural area buffers made earlier), creating separate shape files for each. This resulted in 100 shapefile layers, which were then merged into the single part layer 'NHS_Features_Leaflet', and saved in the projection WGS84 (EPSG:4326), the preferred projection for Leaflet. There appeared to be no effective way to automate the delineation of features as it was not based on attributes but rather by visual extend - which areas look like core vs corridor based on size and shape. (See image of "NHS_Features_Leaflet" with a feature selected.)
 
