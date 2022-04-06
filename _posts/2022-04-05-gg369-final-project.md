@@ -3,11 +3,6 @@ title: "GG369 - Final Project"
 date: 2020-04-05
 categories:
   - WLU-GIS
-tags:
-  - GIS
-  - WLU
-  - School
-  - Mapping
 ---
 
 # GG369 - Final Project
