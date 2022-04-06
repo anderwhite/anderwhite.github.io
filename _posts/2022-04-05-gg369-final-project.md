@@ -28,7 +28,7 @@ First, I set out to visualize income within the region in the form of income bra
 
 <p style="text-align: center;">Map 1 - Income Brackets</p>
 
-![KW_Income_Snip](../assets/images/gg369/KW_Income_Map.jpg)
+![KW_Income_map](../assets/images/gg369/KW_Income_Map.jpg)
 
 ## Map 2 - Public Transit
 
