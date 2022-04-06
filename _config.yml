@@ -62,18 +62,15 @@ author:
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Environmental Major, Aspiring Urban Planner, Tech Geek and Foodie."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+    - label: "GG369 - Final Project"
+      icon: "fas fa-fw fa-link"
+      url: "https://anderwhite.github.io/wlu-gis/gg369-final-project/"
+    - label: "GG469 - Final Project"
+      icon: "fas fa-fw fa-link"
+      url: "https://anderwhite.github.io/wlu-gis/gg469-final-project/"
 
 footer:
   links:
