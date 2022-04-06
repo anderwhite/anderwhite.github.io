@@ -4,52 +4,43 @@ date: 2020-04-05
 categories:
   - WLU-GIS
 ---
+# Region of Waterloo Bike-ability Mapping
 
-# GG369 - Final Project
+**Project Description** - This post is part of the _WLU-GIS_ collection, containing the GIS projects I completed while getting my undergrad at Wilfrid Laurier University. In this project, I would like to highlight and discuss the correlation between wealth and car dependency, specifically potential access to methods of active and public transportation. I will first create a map highlighting the income range in the region, then I will create two additional maps highlighting public and active transit availability, comparing them to income. As a slight preface, Waterloo Region is known within the planning and new-urbanism communities for having made significant efforts to improve walk and bike-ability [(Speck, J., 2018)](#Bibliography). Performing this mapping exercise for additional cities and comparing them could prove insightful. 
 
-## Project Description 
+## Project Breakdown 
 
-This post is part of the _WLU-GIS_ collection, containing the GIS projects I completed while getting my undergrad at Wilfrid Laurier University. In this project, I would like to highlight and discuss the correlation between wealth and car dependency, specifically potential access to methods of active and public transportation. I will first create a map highlighting the income range in the region, then I will create two additional maps highlighting public and active transit availability, comparing them to income. As a slight preface, Waterloo Region is known within the planning and new-urbanism communities for having made significant efforts to improve walk and bike-ability [(Speck, J., 2018)](#Bibliography). Performing this mapping exercise for additional cities and comparing them could prove insightful. 
+**Data Collection and Wrangling** - The primary data for this project is a course-provided shapefile, "KC_CAM_CT", for the Region of Waterloo, Ontario. This shapefile outlines the census areas for the region with extensive metadata on population incomes. This layer was then joined with "kwc_2016_census_profile" and renamed "KW_CensusData". Additional shapefiles for "Cycling", "Cycling_Infrastructure", "Bikeway_Network", "GRT Routes" and "ION Routes" were downloaded from the Region of Waterloo - Open Data website. 
 
-## Data Collection and Wrangling
-
-The primary data for this project is a course-provided shapefile, "KC_CAM_CT", for the Region of Waterloo, Ontario. This shapefile outlines the census areas for the region with extensive metadata on population incomes. This layer was then joined with "kwc_2016_census_profile" and renamed "KW_CensusData". Additional shapefiles for "Cycling", "Cycling_Infrastructure", "Bikeway_Network", "GRT Routes" and "ION Routes" were downloaded from the Region of Waterloo - Open Data website. 
-
-## Map 1 - Income Brackets
-
-First, I set out to visualize income within the region in the form of income brackets or ranges. I decided to use  "TI_Pop15", the Total Income for persons over 15, to make my brackets. I created a new field in "KW_CensusData" called 'Bracket', then selected features by expression (e.g. "TI_Pop15_" >=1000 and "TI_Pop15_" <=2000), updated the 'Bracket' field for selected features with an identifying string ('>1K', 1-2K', '2-3K', etc,. ). I then applied a colour range from  Red to Green and created a map layout (See "Map 1 - Income Brackets" aka Final_Map1). The bracket will be used as a base to collect and compare additional data points.
+**Map 1 (Income Brackets)** - First, I set out to visualize income within the region in the form of income brackets or ranges. I decided to use  "TI_Pop15", the Total Income for persons over 15, to make my brackets. I created a new field in "KW_CensusData" called 'Bracket', then selected features by expression (e.g. "TI_Pop15_" >=1000 and "TI_Pop15_" <=2000), updated the 'Bracket' field for selected features with an identifying string ('>1K', 1-2K', '2-3K', etc,. ). I then applied a colour range from  Red to Green and created a map layout (See "Map 1 - Income Brackets" aka Final_Map1). The bracket will be used as a base to collect and compare additional data points.
 
 <div style="page-break-after: always;"></div>
 
 <p style="text-align: center;">Map 1 - Income Brackets</p>
 
-![KW_Income_map](../assets/images/gg369/KW_Income_Map.jpg)
+![KW_Income_map](/assets/images/gg369/KW_Income_Map.jpg)
 
-## Map 2 - Public Transit
-
-Looking now at public transit, our objective is to determine the quantity of transportation within an area, equalize those results based on size, then re-rank and visualize each location based on this density of transportation. We measure the quantity of transportation by the sum of the length of all routes, which may not be the most effective or sophisticated measure but will be suitable for this assignment. 
+**Map 2 (Public Transit)** - Looking now at public transit, our objective is to determine the quantity of transportation within an area, equalize those results based on size, then re-rank and visualize each location based on this density of transportation. We measure the quantity of transportation by the sum of the length of all routes, which may not be the most effective or sophisticated measure but will be suitable for this assignment. 
 
 To find the length of the transportation route, we first merge the vector layers for both GRT Routes" and "ION Routes" and  Collect Geometries based on Route Names to clean up the data by making each route one contiguous line segment. We then use the Sum Line Lengths tool to calculate the total length that runs through each polygon, naming it "TransLength". We also use the Add Geometry Attributes tool to add the Areas for each feature. Using the Field Calculator and the Statistics function, we can select all features based on their "Bracket" and determine the sum of the "TransLength" for each, which we add to a new field called "SumTrans" (See "Process Snip" image below). We can now calculate the theoretical density of the transit in each bracket with the equation (SUM("Bracket" = 'x-y') / "area"). We now have the amount of area in m² that is covered by 1m of Public transit, or, inversely, the density of transit routes. We can now change symbology, legend names, etc, and create a map layout comparing this data with the original income map (See "Map 2 - Income Transit Map" below or attached).
 <div style="page-break-after: always;"></div>
 
 <p style="text-align: center;">Map 2 - Income Transit Map</p>
 
-![KW_Income_Snip](../assets/images/gg369/Income_Transit_Map.jpg)
+![KW_Income_Snip](/assets/images/gg369/Income_Transit_Map.jpg)
 
-## Map 3 - Bike Network
-
-Saving the best for last, we'll now look at the city's bike network. Biking is an incredibly powerful tool, with many if not more of the benefits of walking. Looking at the initial data, it is clear that Cambridge is the most bike-friendly of the tri-cities (Kitchener, Waterloo, Cambridge). We will repeat the process from the last section by first merging the various biking layers ("Cycling", "Cycling_Infrastructure", and "Bikeway_Network"), and collect geometries. Although the Collect Geometries tool combines all the features into one, which could be undesirable for other analyses, it will work fine here. We then use the Sum Line Length tool to calculate the total length of bike lanes in each census region. 
+**Map 3 (Bike Network)** - Saving the best for last, we'll now look at the city's bike network. Biking is an incredibly powerful tool, with many if not more of the benefits of walking. Looking at the initial data, it is clear that Cambridge is the most bike-friendly of the tri-cities (Kitchener, Waterloo, Cambridge). We will repeat the process from the last section by first merging the various biking layers ("Cycling", "Cycling_Infrastructure", and "Bikeway_Network"), and collect geometries. Although the Collect Geometries tool combines all the features into one, which could be undesirable for other analyses, it will work fine here. We then use the Sum Line Length tool to calculate the total length of bike lanes in each census region. 
 
 Once Again, using the Field Calculator and the Statistics tool, we can find the sum of bike lanes by "Bracket". Adding the field "SumBike" and filling each bracket, and using Add Geometry Attributes to get the "area". Using the same process and equation as before (SUM("Bracket" = 'x-y') / "area"), we can determine the area in m² that is covered by 1m of Bike Infrastructure (See "Process Image" below or attached).
 
 <div style="page-break-after: always;"></div>
 <p style="text-align: center;">Process Image</p>
 
-![Process_Image](../assets/images/gg369/Process_Snip.jpg)
+![Process_Image](/assets/images/gg369/Process_Snip.jpg)
 
 <p style="text-align: center;">Map 3 - Income Bike Map</p>
 
-![Process_Image](../assets/images/gg369/Income_Bike_Map.jpg)
+![Process_Image](/assets/images/gg369/Income_Bike_Map.jpg)
 
 
 
@@ -84,4 +75,4 @@ Speck, J. (2018). Walkable city rules: 101 steps to making better places. In *Wa
 Weitz, J., & Moore, T. (1998). Development inside Urban Growth Boundaries: Oregon’s Empirical Evidence of Contiguous Urban Form. *Journal of the American Planning Association*, *64*(4), 424–440. https://doi.org/10.1080/01944369808976002
 
 ---
-##### This document was created in the Markdown Language for dissemination on the personal blog of Alexander White, [anderwhite.github.io/GG369](https://anderwhite.github.io/GG369/) at the time of writing. All maps and images were created by Alexander D. White, March 2022 for GG369 - Geographical Info Systems, Wilfrid Laurier University, using QGIS 3.16.15, OpenStreetMap, and course-provided data. Information is for personal use only as data may not be accurate.
+##### This document was created in the Markdown Language for dissemination on the personal blog of Alexander White, [anderwhite.github.io/GG369](https://anderwhite.github.io/) at the time of writing. All maps and images were created by Alexander D. White, March 2022 for GG369 - Geographical Info Systems, Wilfrid Laurier University, using QGIS 3.16.15, OpenStreetMap, and course-provided data. Information is for personal use only as data may not be accurate.
