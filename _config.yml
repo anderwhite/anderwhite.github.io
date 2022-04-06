@@ -65,10 +65,10 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
-    - label: "GG369 - Final Project"
+    - label: "Waterloo Bike-abilty Mapping (GG369)"
       icon: "fas fa-fw fa-link"
       url: "https://anderwhite.github.io/wlu-gis/gg369-final-project/"
-    - label: "GG469 - Final Project"
+    - label: "Brampton NHS Mapping (GG469)"
       icon: "fas fa-fw fa-link"
       url: "https://anderwhite.github.io/wlu-gis/gg469-final-project/"
 
