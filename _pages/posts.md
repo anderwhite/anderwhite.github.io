@@ -1,6 +1,6 @@
 ---
 title: "Posts"
 layout: posts
-permalink: /
+permalink: " "
 author_profile: true
 ---
