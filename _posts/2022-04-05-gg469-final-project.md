@@ -3,6 +3,9 @@ title: "GG469 - Final Project"
 date: 2020-04-05
 categories:
   - WLU-GIS
+tags:
+  - Wilfrid Laurier
+  - QGIS
 ---
 
 # Brampton Natural Heritage System (NHS) Mapping
