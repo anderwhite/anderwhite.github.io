@@ -19,8 +19,6 @@ Buildings - Outside Wetland Buffers = 44,079 <br/>
 Evaluated Wetlands = 1,128 <br/>
 Unevaluated Wetlands = 2,763 <br/>
 
-age-break-after: always;"></div>
-
 <p style="text-align: center;">Kawartha Wetland Map</p>
 ![GG369 Map 1](/assets/images/gg369/wetlandmap1.jpg)
 
