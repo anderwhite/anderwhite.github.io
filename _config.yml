@@ -61,7 +61,7 @@ author:
   name   : "Alexander White"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Environmental Major, Aspiring Urban Planner, Tech Geek and Foodie."
-  links:S
+  links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/anderwhite/"
