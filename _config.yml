@@ -61,7 +61,7 @@ author:
   name   : "Alexander White"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Environmental Major, Aspiring Urban Planner, Tech Geek and Foodie."
-  links:
+  links:S
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/anderwhite/"
@@ -71,6 +71,9 @@ author:
     - label: "Brampton NHS Mapping"
       icon: "fas fa-fw fa-link"
       url: https://anderwhite.github.io/wlu-gis/gg469-brampton-nhs/"
+    - label: "Map Archive"
+      icon: "fas fa-fw fa-link"
+      url: "https://anderwhite.github.io/map-archive/"
 
 # footer:
   # links:
