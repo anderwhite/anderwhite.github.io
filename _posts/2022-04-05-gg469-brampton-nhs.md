@@ -1,5 +1,5 @@
 ---
-title: "GG469 - Final Project"
+title: "GG469 - Brampton NHS Mapping"
 date: 2020-04-05
 categories:
   - WLU-GIS

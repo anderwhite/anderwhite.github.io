@@ -1,5 +1,5 @@
 ---
-title: "GG369 - Final Project"
+title: "GG369 - Waterloo Bike-ablity Mapping"
 date: 2020-04-05
 categories:
   - WLU-GIS

@@ -1,5 +1,5 @@
 ---
-title: "GG369 - Kawartha Map"
+title: "GG369 - Kawartha Wetlands Mapping"
 date: 2020-04-17
 categories:
   - WLU-GIS
