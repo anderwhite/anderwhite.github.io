@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "Alexander White"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Environmental Major, Aspiring Urban Planner, Tech Geek and Foodie."
+  bio    : "Dabbler In Tech and Connoisseur Of Fine Foods!"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
